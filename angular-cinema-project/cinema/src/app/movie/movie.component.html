@@ -3,17 +3,27 @@
     <div class="form-group">
       <label class="text-warning" for="title">Movie Title:</label>
       <input id="title" type="text" class="form-control"
-        required pattern="" name="title" [(ngModel)]="movie.title">
+        required pattern="[A-Za-z\ áÁéÉíÍóÓöÖúÚüÜűŰ]{5,25}" name="title" [(ngModel)]="movie.title">
     </div>
     <div class="row">
       <div class="form-group col-6">
-
+        <label class="text-warning" for="year">Release year:</label>
+        <input id="year" type="number" class="form-control"
+          required pattern="19[0-9]{2}|200[0-9]{1}|201[0-9]{1}|2020|2021" name="year" [(ngModel)]="movie.year">
       </div>
       <div class="form-group col-6">
-
+        <label class="text-warning" for="category">Category:</label>
+        <select id="category" class="form-control"
+          required pattern="" name="category" [(ngModel)]="movie.category">
+          <option value="" selected disabled>Choose Category</option>
+          <option value="Drama">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Fantasy">Fanasy</option>
+        </select>
       </div>
     </div>
-
+    <button type="submit" [disabled]="!mForm.valid" (click)="saveMovie()" class="btn btn-warning btn-block mt-5">Save</button>
+      <small [hidden]="mForm.valid" class="text-danger">Fill all field to save!</small>
   </form>
 
 
