@@ -12,7 +12,7 @@ describe('Movie-List Komponens tesztelése', () => {
   let mockHttpClient : {get: jasmine.Spy, delete: jasmine.Spy};
   let httpMockService : HttpService;
   let mockServerMovieList = [];
-  const deletedMovie = {};
+  const deletedMovie = { id: 7, title: "Top Gun", year: 1990, category: "Action" };
 
   beforeEach(async () => {
      mockServerMovieList =  [

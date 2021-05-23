@@ -17,6 +17,9 @@ export class AppComponent {
 
   constructor(){}
 
-  selectCategory(category){}
-  
+  selectCategory(category){
+    const i:number = ['Fantasy','Action','Drama'].indexOf(category);
+    if(i>=0) this.chosenByCategory = this.categoryCardList[i];
+  }
+
 }

@@ -1,5 +1,5 @@
 <section class="table-section">
-    <button id="get-button">Get movie List</button>
+    <button id="get-button" (click)="getMovies()">Get movie List</button>
     <table>
         <thead>
           <tr>
@@ -10,7 +10,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-row"></tr>
+        <tr *ngFor="let movie of movies" class="table-row">
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.year }}</td>
+          <td>{{ movie.category }}</td>
+          <td>
+            <div class="btn-group">
+<!--
+              <button [routerLink]="['movie/' + movie.id]" class="btn btn-info" (click)="updateItem(movie)">
+                <i class="fa fa-pencil"></i>
+              </button>
+              <button class="btn btn-success" (click)="onCreate(movie)">
+                <i class="fa fa-plus"></i>
+              </button>
+              <button class="btn btn-info" (click)="onUpdate(movie)">
+                <i class="fa fa-refresh"></i>
+              </button>
+-->
+              <button class="delete-button" (click)="deleteMovie(movie.id)">Delete</button>
+            </div>
+          </td>
+        </tr>
         </tbody>
     </table>
 </section>

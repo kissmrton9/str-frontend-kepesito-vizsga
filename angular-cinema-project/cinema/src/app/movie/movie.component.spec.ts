@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed,  } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MovieComponent } from './movie.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from '../service/http.service';
 
 describe('Movie komponens elemeinek tesztelése', () => {
   let component: MovieComponent;
@@ -11,7 +13,7 @@ describe('Movie komponens elemeinek tesztelése', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MovieComponent ],
-      imports: [FormsModule, ReactiveFormsModule]
+      imports: [HttpClientModule, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   });
@@ -119,7 +121,7 @@ describe('Movie űrlap validátor tesztjei', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MovieComponent ],
-      imports: [FormsModule, ReactiveFormsModule]
+      imports: [HttpClientModule, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   });

@@ -1,0 +1,16 @@
+.card{
+  width: 650px;
+  display: block;
+  margin: 3% auto;
+  padding: 1rem;
+  background-color: rgb(73, 73, 65);
+}
+img {
+  display: block;
+  width: 90%;
+  margin: 3% auto;
+}
+h3, p {
+  text-align: center;
+  color: rgb(214, 176, 106);
+}
